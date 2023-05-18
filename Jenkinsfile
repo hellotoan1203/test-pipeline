@@ -4,7 +4,8 @@ pipeline {
     JENKINS_URL = "http://localhost:8080/"
     FOO = "BAR"
   }
-  agent any stages {
+  agent any 
+  stages {
     stage('Build') {
       agent {
         docker {
