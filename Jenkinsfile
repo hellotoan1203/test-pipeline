@@ -27,7 +27,7 @@ pipeline {
       steps {
         sh 'ls -l'
         sh 'docker build -t test/node:1.0.0 -f Dockerfile .'
-        sh 'docker run --rm -t test/node:1.0.0'
+        sh 'docker run --rm -t test/node:1.0.0 -d'
       }
     }
     stage('Test') {
