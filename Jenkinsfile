@@ -9,15 +9,17 @@ pipeline {
     stage('Build') {
       agent {
         docker {
-          alwaysPull true args '-v /mnt:/mnt'
+          alwaysPull true 
+          args '-v /mnt:/mnt'
           image 'node:14-alpine'
         }
       }
       steps {
         echo 'Building..'
-        sh ''
-        ' node --version echo "I did edit it!" > README.md '
-        ''
+        sh ''' 
+          node --version 
+          echo "I did edit it!" > README.md 
+        '''
         echo " = ${env.FOO}"
       }
     }
