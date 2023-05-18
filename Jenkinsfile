@@ -24,12 +24,6 @@ pipeline {
       }
     }
     stage('Building our image') {
-      agent {
-        docker {
-          alwaysPull true args '-v /var/run/docker.sock:/var/run/docker.sock:ro'
-          image 'docker:20.10.8'
-        }
-      }
       steps {
         sh 'ls -l'
         sh 'docker build -t test/node:1.0.0 -f Dockerfile .'
